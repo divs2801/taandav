@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PoseNet - Taandav</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- TensorFlow.js and Teachable Machine Pose libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.3.1/dist/tf.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/pose@0.8/dist/teachablemachine-pose.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.1.9/p5.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.1.9/addons/p5.dom.min.js"></script>
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <h1>taandav</h1>
+        </div>
+        <nav>
+            <a href="index.html">Dashboard</a>
+            <a href="theory.html">Theory</a>
+            <a href="videos.html">Practical Videos</a>
+            <a href="posenet.html" class="active">Posenet</a>
+            <a href="community.html">Community</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="posenet-section">
+            <h2>Posenet</h2>
+            <p>Instructions:</p>
+            <ol>
+                <li>Ensure your camera is connected and permissions are granted</li>
+                <li>Press "Start Posenet" button to begin pose detection</li>
+                <li>Stand in front of your device and make sure your full body is visible</li>
+                <li>Practice your aramandi and system will provide feedback on your posture</li>
+            </ol>
+
+            <div class="status-indicators">
+                <span class="status wrong-posture">✘ Wrong Posture</span>
+                <span class="status correct-posture">✔ Correct Posture</span>
+            </div>
+
+            <!-- Webcam Video and Pose Detection -->
+            <div class="video-placeholder">
+                <video id="webcam" autoplay playsinline></video>
+            </div>
+
+            <!-- Start Button -->
+            <button class="start-btn" onclick="startPoseNet()">Start Posenet</button>
+        </section>
+
+        <script src="sketch.js"></script>
+    </main>
+</body>
+</html>

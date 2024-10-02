@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unit 1 - Flashcards</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <h1>taandav</h1>
+        </div>
+        <nav>
+            <a href="index.html">Dashboard</a>
+            <a href="theory.html">Theory</a>
+            <a href="videos.html">Practical Videos</a>
+            <a href="#">Posenet</a>
+            <a href="community.html">Community</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="flashcards-page">
+            <a href="unit1-overview.html" class="back-link">← Back</a>
+            <h2>Unit 1 - Origin of Natya</h2>
+            <h3>Flashcards</h3>
+
+            <!-- Flashcard Content -->
+            <div class="flashcard" id="flashcard">
+                <div class="front" id="front">What is Natya Veda?</div>
+                <div class="back" id="back">Natya Veda is the fifth Veda, created by Brahma to guide humanity through an enjoyable and instructive art form.</div>
+            </div>
+
+            <!-- Navigation for flashcards -->
+            <div class="flashcard-navigation">
+                <a href="#" id="previous-card" class="back-link">← Previous</a>
+                <span class="flashcard-number">1 of 10</span>
+                <a href="#" id="next-card" class="next-link">Next →</a>
+            </div>
+
+            <!-- Terms overview button -->
+            <div class="terms-overview-section">
+                <a href="unit1-terms-overview.html" class="memory-game-btn">Terms Overview</a>
+            </div>
+            </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- JavaScript for Interactivity -->
+    <script>
+        const flashcards = [
+            {question: "What is Natya Veda?", answer: "Natya Veda is the fifth Veda, created by Brahma..."},
+            {question: "Who created Natya Veda?", answer: "Natya Veda was created by Brahma."},
+            {question: "What are the four existing Vedas?", answer: "Rig Veda, Sama Veda, Yajur Veda, and Atharva Veda."},
+            // Add more flashcards as needed
+        ];
+
+        let currentIndex = 0;
+        const front = document.getElementById('front');
+        const back = document.getElementById('back');
+        const flashcardNumber = document.querySelector('.flashcard-number');
+
+        // Function to load the flashcard
+        function loadFlashcard(index) {
+            front.textContent = flashcards[index].question;
+            back.textContent = flashcards[index].answer;
+            back.style.display = 'none';  // Show front initially
+            front.style.display = 'block';  // Hide back initially
+            flashcardNumber.textContent = `${index + 1} of ${flashcards.length}`;
+            updateButtons();  // Update visibility of navigation buttons
+        }
+
+        // Function to update button visibility
+        function updateButtons() {
+            const nextLink = document.getElementById('next-card');
+            const backLink = document.getElementById('previous-card');
+
+            // Hide the back button on the first flashcard
+            if (currentIndex === 0) {
+                backLink.style.visibility = 'hidden';
+            } else {
+                backLink.style.visibility = 'visible';
+            }
+
+            // Hide the next button on the last flashcard
+            if (currentIndex === flashcards.length - 1) {
+                nextLink.style.visibility = 'hidden';
+            } else {
+                nextLink.style.visibility = 'visible';
+            }
+        }
+
+        // Initial load
+        loadFlashcard(currentIndex);
+
+        // Flashcard click event for flipping
+        document.getElementById('flashcard').addEventListener('click', function() {
+            if (front.style.display !== 'none') {
+                front.style.display = 'none';
+                back.style.display = 'block';
+            } else {
+                back.style.display = 'none';
+                front.style.display = 'block';
+            }
+        });
+
+        // Next button navigation
+        document.getElementById('next-card').addEventListener('click', function(event) {
+            event.preventDefault();  // Prevent the default link behavior
+            if (currentIndex < flashcards.length - 1) {
+                currentIndex++;
+                loadFlashcard(currentIndex);
+            }
+        });
+
+        // Back button navigation
+        document.getElementById('previous-card').addEventListener('click', function(event) {
+            event.preventDefault();  // Prevent the default link behavior
+            if (currentIndex > 0) {
+                currentIndex--;
+                loadFlashcard(currentIndex);
+            }
+        });
+    </script>
+
+</body>
+</html>

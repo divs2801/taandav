@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Community</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <h1>taandav</h1>
+        </div>
+        <nav>
+            <a href="index.html">Dashboard</a>
+            <a href="theory.html">Theory</a>
+            <a href="#">Practical Videos</a>
+            <a href="#">Posenet</a>
+            <a href="community.html" class="active">Community</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="community-section">
+            <h2>Community</h2>
+            <p>Welcome to the Community! Feel free to post, respond to any questions you have related to the lesson, SAMPADA, or dance in general!</p>
+
+            <div class="community-buttons">
+                <button id="newPostBtn" class="community-btn">+ New Post</button>
+                <button class="community-btn">Zoom Links</button>
+                <button class="community-btn">FAQ's</button>
+            </div>
+
+            <!-- New Post Form (hidden by default) -->
+            <div id="newPostForm" class="new-post-form hidden">
+                <h3>Create a New Post</h3>
+                <label for="postTitle">Title:</label>
+                <input type="text" id="postTitle" placeholder="Enter your post title" required>
+                <label for="postContent">Content:</label>
+                <textarea id="postContent" placeholder="Enter your post content" required></textarea>
+                <button id="submitPostBtn" class="submit-btn">Submit</button>
+                <button id="cancelPostBtn" class="cancel-btn">Cancel</button>
+            </div>
+
+            <!-- Community Posts -->
+            <div id="communityPosts" class="community-posts">
+                <!-- Example Posts (Existing posts) -->
+                <div class="post">
+                    <h4>Question for practical exam</h4>
+                    <p><strong>Posted by Myra Krishnan</strong></p>
+                    <p>Are we required to demonstrate all the Asamyutha Hastas during the Level 1 practical exam, or can we choose specific ones?</p>
+                    <button class="reply-btn">Reply</button>
+                </div>
+
+                <div class="post">
+                    <h4>Practice Session</h4>
+                    <p><strong>Posted by Kavya Sam</strong></p>
+                    <p>Does anyone want to meet up for a practice session before the practical exam?</p>
+                    <button class="reply-btn">Reply</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="community.js"></script>
+
+</body>
+</html>
