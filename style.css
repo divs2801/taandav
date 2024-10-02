@@ -121,13 +121,6 @@ button:hover {
     background-color: #f08a24;
 }
 
-/* Global Reset */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
 body {
     font-family: 'Arial', sans-serif;
     background-color: #f6e7d3;
@@ -590,13 +583,23 @@ main {
 }
 
 .memory-game-card.hidden {
-    background-color: #f2a65a;
+    background-color: #f2a65a; /* Keeps the same */
+    color: transparent; /* Keep text hidden */
+}
+
+/* When the card is clicked and revealed, remove .hidden */
+.memory-game-card:not(.hidden) {
+    color: white; /* Make text visible */
 }
 
 .memory-game-card.matched {
     background-color: #571c20;
     cursor: default;
     pointer-events: none;
+}
+
+.memory-game-card:not(.matched):hover {
+    background-color: #b07664; /* Only apply hover effect on non-matched cards */
 }
 
 .memory-game-card:hover {
@@ -704,6 +707,30 @@ main {
     background-color: #b07664;
 }
 
+/* Progress Bar */
+.progress-bar-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 20px 0;
+}
+
+.progress-bar {
+    width: 80%;
+    height: 20px;
+    background-color: #ffe3b0;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.progress {
+    width: 20%; /* Initial progress */
+    height: 100%;
+    background-color: #c7927a;
+    border-radius: 10px;
+    transition: width 1s ease-in-out;
+}
+
 /* Community Section */
 .community-section {
     margin: 40px auto;
@@ -783,10 +810,17 @@ main {
 }
 
 .hidden {
-    display: none;
+    background-color: #eee; /* Hide the text by matching the background */
+    color: transparent; /* Hide the text */
+    transition: background-color 0.3s, color 0.3s; /* Smooth reveal */
 }
 
 /* Community Posts */
+
+.community-hidden {
+    display: none; /* Specifically hide elements in the community section */
+}
+
 .community-posts {
     margin-top: 40px;
 }
@@ -894,18 +928,42 @@ main {
     color: #333;
 }
 
+/* Progress Bar */
+.progress-bar-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 20px 0;
+}
+
+.progress-bar {
+    width: 80%;
+    height: 20px;
+    background-color: #ffe3b0;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.progress {
+    width: 20%; /* Initial progress */
+    height: 100%;
+    background-color: #c7927a;
+    border-radius: 10px;
+    transition: width 1s ease-in-out;
+}
+
 /* Posenet Page */
 .posenet-section {
-    max-width: 800px;
+    max-width: 900px;
     margin: 40px auto;
     padding: 20px;
-    background-color: #fff;
+    background-color: #fdf3e2;
     border-radius: 10px;
     text-align: center;
 }
 
 .posenet-section h2 {
-    font-size: 32px;
+    font-size: 36px;
     color: #571c20;
     margin-bottom: 20px;
 }
@@ -914,6 +972,7 @@ main {
     text-align: left;
     font-size: 18px;
     color: #3d3d3d;
+    padding-left: 20px;
 }
 
 .status-indicators {
@@ -923,25 +982,42 @@ main {
 .status {
     font-size: 18px;
     display: inline-block;
-    margin: 0 10px;
+    margin: 0 20px;
+    padding: 10px 20px;
+    border-radius: 5px;
 }
 
 .wrong-posture {
     color: red;
+    background-color: #fdd;
 }
 
 .correct-posture {
     color: green;
+    background-color: #dfd;
 }
 
-.video-placeholder {
-    width: 600px;
-    height: 400px;
-    background-color: #d8d8d8;
+/* Video Feed Container */
+#video-feed-container {
+    width: 640px;
+    height: 480px;
     margin: 20px auto;
+    background-color: #eae2d7;
+    border: 2px solid #c7927a;
+    border-radius: 10px;
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Ensure the P5.js Canvas fills the container */
+canvas {
+    width: 100%;  /* Fill the container width */
+    height: 100%;  /* Fill the container height */
+    display: block;
+    position: relative;
 }
 
 .start-btn {

@@ -7,12 +7,12 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Show the new post form when New Post button is clicked
     newPostBtn.addEventListener('click', () => {
-        newPostForm.classList.remove('hidden');
+        newPostForm.classList.remove('community-hidden');
     });
 
     // Cancel the new post form
     cancelPostBtn.addEventListener('click', () => {
-        newPostForm.classList.add('hidden');
+        newPostForm.classList.add('community-hidden');
     });
 
     // Submit the new post
@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
             document.getElementById('postContent').value = '';
 
             // Hide the new post form
-            newPostForm.classList.add('hidden');
+            newPostForm.classList.add('community-hidden');
         } else {
             alert('Please fill in both the title and content of your post.');
         }

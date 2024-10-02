@@ -31,24 +31,22 @@
             <h2>Posenet</h2>
             <p>Instructions:</p>
             <ol>
-                <li>Ensure your camera is connected and permissions are granted</li>
-                <li>Press "Start Posenet" button to begin pose detection</li>
-                <li>Stand in front of your device and make sure your full body is visible</li>
-                <li>Practice your aramandi and system will provide feedback on your posture</li>
+                <li>Ensure your camera is connected and permissions are granted.</li>
+                <li>Press "Start Posenet" button to begin pose detection.</li>
+                <li>Stand in front of your device and make sure your full body is visible.</li>
+                <li>Practice your aramandi, and the system will provide feedback on your posture. A green signal means correct posture, and a red signal means incorrect posture.</li>
             </ol>
 
+            <!-- Posture Status Indicators -->
             <div class="status-indicators">
-                <span class="status wrong-posture">✘ Wrong Posture</span>
-                <span class="status correct-posture">✔ Correct Posture</span>
+                <span id="wrongPosture" class="status wrong-posture">✘ Wrong Posture</span>
+                <span id="correctPosture" class="status correct-posture">✔ Correct Posture</span>
             </div>
 
-            <!-- Webcam Video and Pose Detection -->
-            <div class="video-placeholder">
-                <video id="webcam" autoplay playsinline></video>
+            <!-- Container for the video/canvas feed -->
+            <div id="video-feed-container">
+                <!-- The canvas for the live video feed will be inserted here by P5.js -->
             </div>
-
-            <!-- Start Button -->
-            <button class="start-btn" onclick="startPoseNet()">Start Posenet</button>
         </section>
 
         <script src="sketch.js"></script>

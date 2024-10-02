@@ -51,7 +51,6 @@ function handleCardClick(event) {
     }
 }
 
-
 function checkForMatch() {
     locked = true;
     const firstText = firstCard.getAttribute('data-text');
@@ -86,6 +85,12 @@ function checkForMatch() {
             resetCards();
         }, 1000);
     }
+}
+
+function resetCards() {
+    firstCard = null;
+    secondCard = null;
+    locked = false;
 }
 
 // Initialize the game
