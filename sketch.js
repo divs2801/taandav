@@ -1,20 +1,24 @@
-const modelURL = 'https://teachablemachine.withgoogle.com/models/aTBKW1mDS/';
+const modelURL = 'https://teachablemachine.withgoogle.com/models/ceOq9ARBc/';
 // the json file (model topology) has a reference to the bin file (model weights)
 const checkpointURL = modelURL + "model.json";
 // the metatadata json file contains the text labels of your model and additional information
 const metadataURL = modelURL + "metadata.json";
 
 
-const flip = true; // whether to flip the webcam
+let mirror = true;
+let video;
 
 let model;
 let totalClasses;
-let myCanvas;
 
-let classification = "None Yet";
+// Detected Pose Classification
+let classification = "Pose";
 let probability = "100";
-let poser;
-let video;
+
+let keypoints; //pose keypoints
+let showKeypoints = false;
+
+let nosePos;
 
 
 // A function that loads the model from the checkpoint
@@ -24,47 +28,77 @@ async function load() {
   console.log("Number of classes, ", totalClasses);
 }
 
-
 async function setup() {
-    myCanvas = createCanvas(640, 480);  // Match the container size
-    myCanvas.parent("video-feed-container");  // Attach to the correct container
-  
-    await load();  // Load the model
-    video = createCapture(VIDEO, videoReady);  // Capture the video from the webcam
-    video.size(640, 480);  // Set video size to match the container
-    video.hide();  // Hide the default video element, we’ll draw it on the canvas
+  let myCanvas = createCanvas(640, 480);
+  myCanvas.parent("video-feed-container");
+  // Call the load function, wait until it finishes loading
+  await load();
+  video = createCapture(VIDEO, videoReady);
+  video.size(640, 480);
+  video.hide();
 }
 
 function draw() {
   background(255);
-  if(video) image(video,0,0);
-  fill(255,0,0)
-  textSize(18);
-   if(classification == "Class 1"){
-     fill(0,255,0);
-     rect(10,10,10);
-     
-   }
-  else{
-    fill(255,0,0);
-     rect(10,10,10);
+
+  push();
+  if (mirror) {
+    translate(width, 0);
+    scale(-1, 1);
   }
+  if (video) image(video, 0, 0, width, height);
+  pop();
+
+  fill(255, 255, 255);
+  textSize(36);
+  //result text
+  //text("Result:" + classification, 10, 80);
+  //text("Probability:" + probability, 10, 40);
+
+  textSize(16);
   
-  text("Result:" + classification, 10, 40);
-
-  //text("Probability:" + probability, 10, 20)
-  ///ALEX insert if statement here testing classification against apppropriate part of array for this time in your video
-
-  /*textSize(8);
-  if (poser) { //did we get a skeleton yet;
-    for (var i = 0; i < poser.length; i++) {
-      let x = poser[i].position.x;
-      let y = poser[i].position.y;
-      ellipse(x, y, 5, 5);
-      text(poser[i].part, x + 4, y);
+  if(showKeypoints){
+  if (keypoints) {
+    for (var i = 0; i < keypoints.length; i++) {
+      let x = keypoints[i].position.x;
+      let y = keypoints[i].position.y;
+      ellipse(x, y, 10, 10);
+      text("[" + i + "]:" + keypoints[i].part, x + 8, y);
     }
-  }*/
+  }
+  }
 
+  if (keypoints) { // check if pose is detected
+    
+    //assign nose position
+    nosePos = createVector(
+      keypoints[0].position.x,
+      keypoints[0].position.y + 20
+    );
+
+    push();
+    textSize(240);
+    textAlign(CENTER);
+    
+    //where u change the pose related stuff
+    if (classification == "Class 1") {
+      fill(0,255,0);///text color it rgb!
+      textSize(32);
+      text("Great Job!"+ "\n Now try holding it for 1 more minute", window.width/2,window.height/4);//text for correct posture
+      //rect(0,0,window.width,window.height)
+      
+      } 
+    else if (classification == "Class 2") {
+      fill(255,0,0);
+      textSize(45);
+      text("Try Again!", window.width/2,window.height/4);//text for wrong posture
+
+    } else if (classification == "Class 3") {
+      //fill(255,0,0,127);
+      //rect(0,0,window.width,window.height);
+    }
+    pop();
+  }
 }
 
 function videoReady() {
@@ -72,15 +106,11 @@ function videoReady() {
   predict();
 }
 
-
 async function predict() {
   // Prediction #1: run input through posenet
   // predict can take in an image, video or canvas html element
-  const flipHorizontal = false;
-  const {
-    pose,
-    posenetOutput
-  } = await model.estimatePose(
+  const flipHorizontal = mirror;
+  const { pose, posenetOutput } = await model.estimatePose(
     video.elt, //webcam.canvas,
     flipHorizontal
   );
@@ -92,14 +122,16 @@ async function predict() {
   );
 
   // console.log(prediction);
-  
+
   // Sort prediction array by probability
   // So the first classname will have the highest probability
-  const sortedPrediction = prediction.sort((a, b) => -a.probability + b.probability);
+  const sortedPrediction = prediction.sort(
+    (a, b) => -a.probability + b.probability
+  );
 
   //communicate these values back to draw function with global variables
   classification = sortedPrediction[0].className;
   probability = sortedPrediction[0].probability.toFixed(2);
-  if (pose) poser = pose.keypoints; // is there a skeleton
+  if (pose) keypoints = pose.keypoints; // is there a skeleton
   predict();
 }

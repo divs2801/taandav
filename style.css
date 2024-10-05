@@ -336,9 +336,9 @@ nav a {
     background-color: #b07664;
 }/* Flashcards Page */
 .flashcards-page {
-    margin: 40px auto;
+    margin: 80px auto;
     max-width: 900px;
-    padding: 20px;
+    padding: 40px;
 }
 
 .flashcards-page h2 {
@@ -355,7 +355,7 @@ nav a {
 
 .flashcard {
     background-color: #ffe3b0;
-    padding: 40px;
+    padding: 80px;
     border-radius: 10px;
     border: 2px solid #c7927a;
     text-align: center;
@@ -738,13 +738,13 @@ main {
     padding: 20px;
     background-color: #fff;
     border-radius: 10px;
-    text-align: center;
+    text-align: left;
 }
 
 .community-section h2 {
     color: #571c20;
     font-size: 28px;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
 }
 
 .community-buttons {
