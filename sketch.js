@@ -1,4 +1,4 @@
-const modelURL = 'https://teachablemachine.withgoogle.com/models/ceOq9ARBc/';
+const modelURL = 'https://teachablemachine.withgoogle.com/models/IlXQgt5DA/';
 // the json file (model topology) has a reference to the bin file (model weights)
 const checkpointURL = modelURL + "model.json";
 // the metatadata json file contains the text labels of your model and additional information

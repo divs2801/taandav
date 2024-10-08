@@ -3,50 +3,82 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Taandav Dashboard</title>
+    <title>Taandav Home</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <header>
         <div class="logo">
-            <h1>taandav</h1>
+            <!-- Replacing text-based logo with image-based logo -->
+            <a href="index.html">
+                <img src="images/Taandav_Logo.png" alt="Taandav Logo" style="height: 60px;">
+            </a>
         </div>
         <nav>
-            <a href="index.html">Dashboard</a>
             <a href="theory.html">Theory</a>
             <a href="videos.html">Practical Videos</a>
             <a href="posenet.html">Posenet</a>
             <a href="community.html">Community</a>
-
         </nav>
     </header>
 
     <main>
-        <section class="dashboard">
-            <h2>Level 1 - SAMPADA</h2>
+        <section class="home">
             <div class="content">
-                <!-- Video Content Section -->
-                <div class="video-content">
-                    <h3>Video Content:</h3>
-                    <ul>
-                        <li>✔️ Introduction - Exercises</li>
-                        <li>✔️ Pada Bhedas</li>
-                        <li>✔️ Adavulu - Introduction</li>
+                <!-- This section remains on the left -->
+                <div class="course-info">
+                    <h2>Level 1 SAMPADA Course</h2>
+                    <p>Begin your Kuchipudi journey with the SAMPADA Level 1 course. Learn essential steps, hand gestures, and cultural history with our easy-to-use tools, building a strong foundation in this classical dance form.</p>
+                    <ul class="course-benefits">
+                        <li>
+                            <img src="images/bullet-point.png" alt="icon" class="bullet-icon">
+                            Master classical dance theory and cultural history
+                        </li>
+                        <li>
+                            <img src="images/bullet-point.png" alt="icon" class="bullet-icon">
+                            Perfect essential techniques like Aramandi
+                        </li>
+                        <li>
+                            <img src="images/bullet-point.png" alt="icon" class="bullet-icon">
+                            Learn and confidently perform traditional compositions
+                        </li>
+                        <li>
+                            <img src="images/bullet-point.png" alt="icon" class="bullet-icon">
+                            Prepare for exams to earn credits and certification
+                        </li>
                     </ul>
-                    <p class="exam-date">Exam Date: April 5th - 28th, 2024</p>
                 </div>
-
-                <!-- Theory Content Section -->
-                <div class="theory-content">
-                    <h3>Theory Content:</h3>
-                    <div class="progress-bar">
-                        <div class="progress" style="width: 0%;"></div>
+    
+                <!-- Theory & Practical Content section on the right -->
+                <div class="side-content">
+                    <!-- Theory Content -->
+                    <div class="theory-content">
+                        <h3>Theory Content:</h3>
+                        <img src="images/progress-bar.png" alt="Progress Bar" style="height: 20px;">
+                        <ul>
+                            <li>Origin of Natya</li>
+                            <li>Technical Terms & Definition</li>
+                            <li>Slokas, Sapta Taala</li>
+                            <li>Asamyutha Hastas</li>
+                            <li>Paada Karma</li>
+                        </ul>
+                        <p class="exam-date">Exam: April 28th, 2025</p>
                     </div>
-                    <p class="exam-date">Exam Date: March 21, 2024</p>
+    
+                    <!-- Practical Content -->
+                    <div class="practical-content">
+                        <h3>Practical Content:</h3>
+                        <ul>
+                            <li>Introduction - Exercises</li>
+                            <li>Aramandi (Posture) Practice</li>
+                            <li>Pada Bhedas</li>
+                            <li>Adavulu - Introduction</li>
+                        </ul>
+                        <p class="exam-date">Exam: March 28th, 2025</p>
+                    </div>
                 </div>
             </div>
-
         </section>
     </main>
 

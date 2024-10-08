@@ -7,7 +7,7 @@
 
 body {
     font-family: Arial, sans-serif;
-    background-color: #f6e7d3;
+    background-color: #fdf4e3;
     color: #571c20;
     display: flex;
     flex-direction: column;
@@ -16,24 +16,23 @@ body {
 
 header {
     width: 100%;
-    background-color: #c7927a;
+    background-color: #f7dac0;
     padding: 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    color: #fff;
+    color: #571c20;
 }
 
-.logo h1 {
-    font-size: 28px;
-    font-weight: bold;
+.logo img {
+    height: 60px;
 }
 
 nav a {
     margin: 0 15px;
     text-decoration: none;
-    color: #fff;
-    font-size: 16px;
+    color: #571c20;
+    font-size: 18px;
 }
 
 main {
@@ -42,35 +41,145 @@ main {
     padding: 50px 20px;
 }
 
-.dashboard {
-    background-color: #fdf4e3;
+/* ############################### HOME design #############################*/
+
+.home {
+    background-color: #fff;
     padding: 20px;
     border-radius: 10px;
     border: 2px solid #c7927a;
 }
 
-.dashboard h2 {
-    font-size: 26px;
+.home h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #c73e1d;
+}
+
+.home ul {
+    list-style-type: none;
     margin-bottom: 20px;
 }
 
+.home ul li {
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+/* Container for the left and right sections */
 .content {
     display: flex;
     justify-content: space-between;
+    align-items: flex-start; /* Aligns both sections to the top */
     gap: 20px;
 }
 
-.video-content, .theory-content {
-    width: 45%;
-    padding: 20px;
-    background-color: #fff;
-    border: 2px solid #c7927a;
-    border-radius: 10px;
+/* Left side: course info */
+.course-info {
+    width: 55%;
 }
 
-.video-content h3, .theory-content h3 {
-    font-size: 20px;
+.course-info h2 {
+    font-size: 28px;
+    color: #c73e1d;
+    margin-bottom: 20px; /* Space below the heading */
+}
+
+.course-info p {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #3d3d3d;
+    margin-bottom: 30px; /* Space between paragraph and list */
+}
+
+
+/* Right side: container for both theory and practical content */
+.side-content {
+    width: 40%; /* Less space for the right column */
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Styles for both theory and practical content */
+.theory-content, .practical-content {
+    background-color: #fde3b0;
+    padding: 20px;
+    border-radius: 12px;
+    border: 2px solid #c7927a;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.theory-content h3, .practical-content h3 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #c73e1d;
+    margin-bottom: 15px;
+}
+
+.theory-content ul, .practical-content ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.theory-content ul li, .practical-content ul li {
+    font-size: 18px;
     margin-bottom: 10px;
+    color: #3d3d3d;
+    display: flex;
+    align-items: center;
+}
+
+.theory-content ul li::before, .practical-content ul li::before {
+    content: "✔️";
+    font-size: 20px;
+    color: #c73e1d;
+    margin-right: 10px;
+}
+
+.exam-date {
+    margin-top: 20px;
+    font-size: 16px;
+    color: #822626;
+    font-weight: bold;
+}
+
+/* Styling for the bullet point list */
+ul.course-benefits {
+    list-style: none; /* Remove default bullets */
+    padding-left: 0;
+    margin-bottom: 20px;
+}
+
+ul.course-benefits li {
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+    margin-bottom: 15px;
+    color: #3d3d3d;
+}
+
+/* Custom bullet icon */
+.bullet-icon {
+    width: 24px;
+    height: 24px; /* Adjust the size of the icon */
+    margin-right: 10px; /* Space between icon and text */
+}
+
+/* ################################# VIDEO CONTENT ##################################*/
+
+.video-content {
+    width: 45%;
+    padding: 20px;
+    background-color: #ffe3b0;
+    border-radius: 10px;
+    border: 2px solid #c7927a;
+}
+
+.video-content h3 {
+    font-size: 22px;
+    color: #c73e1d;
+    margin-bottom: 15px;
 }
 
 ul {
@@ -82,23 +191,17 @@ ul li {
     font-size: 18px;
 }
 
-.exam-date {
-    margin-top: 20px;
-    font-size: 16px;
-    color: #571c20;
-}
-
 .progress-bar {
     width: 100%;
     height: 20px;
-    background-color: #e0d6cc;
+    background-color: #f2d6a6;
     border-radius: 10px;
     margin-top: 10px;
 }
 
 .progress {
     height: 100%;
-    background-color: #571c20;
+    background-color: #c73e1d;
     border-radius: 10px;
 }
 
@@ -148,7 +251,7 @@ nav a {
     font-size: 16px;
 }
 
-/* Theory Page Styles */
+/* #################################### Theory Page Styles ################################## */
 .theory-page {
     margin: 40px auto;
     max-width: 900px;
@@ -160,6 +263,17 @@ nav a {
     text-align: center;
     margin-bottom: 40px;
 }
+
+.theory-layout {
+    display: flex;
+    justify-content: flex-start; /* Align the content to the left */
+    align-items: center;  /* Vertically align the content */
+    gap: 40px; /* Space between the image and the units */
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
 
 /* Progress Bar */
 .progress-bar {
@@ -188,20 +302,25 @@ nav a {
 /* Units Section */
 .units {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
+    flex-direction: column;
+    align-items: flex-start; /* Align units to the right */
     gap: 20px;
 }
 
 .unit {
-    background-color: #fff;
-    border: 2px solid #ffb347;
-    border-radius: 10px;
-    padding: 20px;
-    width: 180px;
-    text-align: center;
     cursor: pointer;
+}
+
+.unit img {
+    width: 300px;  /* Adjust the size as needed */
+    height: auto;
+    border-radius: 10px;
     transition: transform 0.2s ease-in-out;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.unit:hover img {
+    transform: scale(1.05);  /* Zoom effect on hover */
 }
 
 .unit h3 {
@@ -215,21 +334,44 @@ nav a {
     margin-top: 10px;
 }
 
-.unit:hover {
-    transform: scale(1.05);
+/* Dancer image */
+.image-container {
+    margin-right: auto; /* Push the image to the far left */
 }
 
-/* Styles for Unit 1 - Objectives page */
+.image-container img {
+    max-width: 450px;  /* Adjust the size of the image */
+    height: auto;
+    border-radius: 10px;
+}
+
+
+/*################################## Unit 1 - Objectives page ############################### */
 .unit-page {
     margin: 40px auto;
-    max-width: 900px;
+    max-width: 1200px;
     padding: 20px;
 }
 
 .unit-page h2 {
     font-size: 28px;
+    color: #571c20;
     margin-bottom: 20px;
-    text-align: left;
+}
+
+/* Container for objectives and side content */
+.content-container {
+    display: flex;
+    justify-content: space-between; /* Ensures side content is to the right */
+    align-items: flex-start; /* Aligns both sections at the top */
+    gap: 20px; /* Adds space between the two sections */
+}
+
+/* Objectives Section */
+.objectives {
+    width: 65%; /* Adjust width of the objectives to leave space for side content */
+    margin-left: 0;
+    margin-right: auto;
 }
 
 .objectives h3 {
@@ -246,35 +388,27 @@ nav a {
     margin-bottom: 40px;
 }
 
-.practice h3, .relevant-videos h3 {
-    font-size: 20px;
-    margin-bottom: 10px;
+.progress-bar-objective
+{
+    margin-left: 25px;
 }
 
-.practice button, .begin-learning button {
-    background-color: #ffb347;
-    color: white;
-    border: none;
-    padding: 15px 30px;
-    font-size: 18px;
+/* Side content (buttons) */
+.side-content {
+    width: 30%; /* Takes up the remaining space on the right */
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.unit img {
+    width: 100%;
     border-radius: 10px;
-    cursor: pointer;
-    margin-right: 10px;
-    transition: background-color 0.3s;
+    transition: transform 0.2s ease-in-out;
 }
 
-.practice button:hover, .begin-learning button:hover {
-    background-color: #f08a24;
-}
-
-.relevant-videos ul {
-    list-style-type: none;
-    font-size: 18px;
-    color: #571c20;
-}
-
-.relevant-videos ul li {
-    margin: 10px 0;
+.unit img:hover {
+    transform: scale(1.05); /* Zoom effect */
 }
 
 .back-link {
@@ -284,57 +418,59 @@ nav a {
     display: block;
     margin-bottom: 20px;
 }
-/* Unit 1 Overview Page */
-.overview-page {
-    margin: 40px auto;
-    max-width: 900px;
-    padding: 20px;
-    background-color: #fff;
-    border: 2px solid #c7927a;
+
+/* ################################# STORY ##################################*/
+
+/* Main Content */
+.story-page h2 {
+    text-align: center;
+    font-size: 32px;
+    color: #4e5c3b;
+    margin-bottom: 40px;
+}
+
+.story-content-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Left: Image */
+.story-image img {
+    max-width: 500px;
+    height: auto;
     border-radius: 10px;
 }
 
-.overview-page h2 {
-    font-size: 24px;
-    color: #571c20;
-    margin-bottom: 20px;
+/* Right: Text */
+.story-text {
+    width: 45%;
 }
 
-.overview-page h3 {
-    font-size: 20px;
-    color: #571c20;
-    margin-bottom: 15px;
-}
-
-.overview-page p {
+.story-text p {
     font-size: 18px;
     line-height: 1.6;
-    margin-bottom: 20px;
+    color: #4e5c3b;
+    margin-bottom: 40px;
 }
 
-.back-link {
-    text-decoration: none;
+/* Next Button */
+.next-button {
     font-size: 18px;
-    color: #571c20;
-    margin-bottom: 20px;
-    display: inline-block;
-}
-
-.next-link {
+    color: #b23b45;
     text-decoration: none;
-    font-size: 18px;
-    color: white;
-    background-color: #c7927a;
-    padding: 10px 20px;
-    border-radius: 10px;
-    display: inline-block;
-    margin-top: 20px;
-    transition: background-color 0.3s;
+    font-weight: bold;
 }
 
-.next-link:hover {
-    background-color: #b07664;
-}/* Flashcards Page */
+/* Done Button */
+.done-button {
+    font-size: 18px;
+    color: #b23b45;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* ################################ FLASHCARDS ######################################## */
 .flashcards-page {
     margin: 80px auto;
     max-width: 900px;
@@ -355,7 +491,7 @@ nav a {
 
 .flashcard {
     background-color: #ffe3b0;
-    padding: 80px;
+    padding: 40px;
     border-radius: 10px;
     border: 2px solid #c7927a;
     text-align: center;
@@ -364,23 +500,36 @@ nav a {
     margin-bottom: 40px;
     cursor: pointer; /* Make it clear that the flashcard is clickable */
     position: relative;
+    height: 200px; /* Fixed height for flashcard */
+    display: flex;
+    justify-content: center; /* Centers content horizontally */
+    align-items: center; /* Centers content vertically */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
 }
 
-.flashcard .front, .flashcard .back {
+.flashcard .front, 
+.flashcard .back {
     position: absolute;
     width: 100%;
     height: 100%;
     top: 0;
     left: 0;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
     font-size: 24px;
     color: #571c20;
+    padding: 60px; /* Padding for text readability */
+    box-sizing: border-box; /* Ensures padding is included in height and width */
+    text-align: center; /* Ensures text is centered */
 }
 
 .flashcard .back {
     display: none; /* Hide the back by default */
+}
+
+.flashcard .front {
+    font-weight: bold;
 }
 
 .flashcard-navigation {
@@ -400,7 +549,7 @@ nav a {
     color: #571c20;
 }
 
-.next-link {
+.next-link, .previous-link {
     text-decoration: none;
     font-size: 18px;
     color: white;
@@ -410,11 +559,12 @@ nav a {
     transition: background-color 0.3s;
 }
 
-.next-link:hover {
+.next-link:hover, .previous-link:hover {
     background-color: #b07664;
 }
 
-/* General Styles */
+
+/* ######################## General Styles ###################### */
 body {
     font-family: 'Arial', sans-serif;
     margin: 0;
@@ -458,20 +608,22 @@ main {
     padding: 20px;
 }
 
-.back-link {
+.back-button {
     display: inline-block;
     color: #571c20;
     text-decoration: none;
     font-size: 18px;
     margin-bottom: 20px;
     transition: color 0.3s;
+    font-weight: bold;
 }
 
-.back-link:hover {
+.back-button:hover {
     color: #c7927a;
 }
 
-/* Terms Overview Section */
+/* ######################## TERMS OVERVIEW ####################*/
+
 .terms-overview {
     margin: 40px auto;
     max-width: 1100px;
@@ -860,7 +1012,7 @@ main {
     background-color: #b07664;
 }
 
-/* Video Page */
+/* ###################################### Video Page ################################### */
 .video-section {
     max-width: 1000px;
     margin: 40px auto;
@@ -876,81 +1028,100 @@ main {
     margin-bottom: 20px;
 }
 
-/* Progress Bar */
-.progress-bar-container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin: 20px 0;
-}
-
-.progress-bar {
-    width: 80%;
-    height: 20px;
-    background-color: #ffe3b0;
-    border-radius: 10px;
-    overflow: hidden;
-}
-
-.progress {
-    width: 20%; /* Initial progress */
-    height: 100%;
-    background-color: #c7927a;
-    border-radius: 10px;
-    transition: width 1s ease-in-out;
-}
-
-.video-container {
-    margin-top: 40px;
-}
-
+/* Section Title for Each Group of Videos */
 .video-container h3 {
-    color: #c7927a;
     font-size: 24px;
+    color: #b07664;
     margin-bottom: 20px;
+    margin-top: 20px;
 }
 
+/* Video Grid */
 .video-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 20px;
+    display: flex;
+    flex-wrap: wrap; /* Allows videos to wrap on smaller screens */
+    gap: 20px; /* Space between video elements */
 }
 
+/* Video Placeholder Styling */
 .video-placeholder {
-    background-color: #d8d8d8;
+    width: 300px; /* Consistent width for each video placeholder */
+    height: 200px; /* Consistent height for each video placeholder */
+    background-color: #ffe3b0;
+    border: 2px solid #c7927a;
     border-radius: 10px;
-    width: 100%;
-    height: 150px;
     display: flex;
     justify-content: center;
     align-items: center;
+    text-align: center;
     font-size: 18px;
-    color: #333;
+    color: #571c20;
+    overflow: hidden; /* Ensures content stays within the box */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
 }
 
-/* Progress Bar */
-.progress-bar-container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin: 20px 0;
-}
-
-.progress-bar {
-    width: 80%;
-    height: 20px;
-    background-color: #ffe3b0;
-    border-radius: 10px;
-    overflow: hidden;
-}
-
-.progress {
-    width: 20%; /* Initial progress */
+.video-placeholder img {
+    width: 100%;
     height: 100%;
-    background-color: #c7927a;
-    border-radius: 10px;
-    transition: width 1s ease-in-out;
+    object-fit: cover; /* Ensures the image fills the box and maintains aspect ratio */
 }
+
+/* Responsive Design for Smaller Screens */
+@media screen and (max-width: 768px) {
+    .video-grid {
+        flex-direction: column; /* Stack videos vertically on small screens */
+        gap: 30px; /* Increase gap between stacked videos */
+    }
+
+    .video-placeholder {
+        width: 100%; /* Full width on small screens */
+        height: auto; /* Adjust height based on content */
+    }
+}
+
+/* Modal Styles */
+.video-modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8); /* Black background with opacity */
+}
+
+.modal-content {
+    position: relative;
+    margin: 10% auto;
+    padding: 20px;
+    background-color: white;
+    max-width: 800px;
+    border-radius: 10px;
+}
+
+.modal-content video {
+    width: 100%;
+    height: auto;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 30px;
+    color: #c73e1d;
+    cursor: pointer;
+}
+
+/* Responsive for smaller screens */
+@media screen and (max-width: 768px) {
+    .video-grid {
+        flex-direction: column;
+    }
+}
+
+/* ############################# POSNET ############################### */
 
 /* Posenet Page */
 .posenet-section {

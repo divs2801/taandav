@@ -10,12 +10,14 @@
 
     <header>
         <div class="logo">
-            <h1>taandav</h1>
+            <!-- Replacing text-based logo with image-based logo -->
+            <a href="index.html">
+                <img src="images/Taandav_Logo.png" alt="Taandav Logo" style="height: 60px;">
+            </a>
         </div>
         <nav>
-            <a href="index.html">Dashboard</a>
             <a href="theory.html">Theory</a>
-            <a href="videos.html" class="active">Practical Videos</a>
+            <a href="videos.html">Practical Videos</a>
             <a href="posenet.html">Posenet</a>
             <a href="community.html">Community</a>
         </nav>
@@ -25,42 +27,54 @@
         <section class="video-section">
             <h2>LEVEL 1 - SAMPADA</h2>
 
-            <!-- Progress Bar -->
-            <div class="progress-bar-container">
-                <div class="progress-bar">
-                    <div class="progress"></div>
-                </div>
-                <p>Progress</p>
-            </div>
-
             <!-- Video Sections -->
             <div class="video-container">
                 <h3>1. Body Conditioning and Exercises</h3>
                 <div class="video-grid">
-                    <div class="video-placeholder">Video 1</div>
-                    <div class="video-placeholder">Pose Practice</div>
+                    <div class="video-placeholder" data-video="videos/exercises.mp4">
+                        <img src="images/video-body-exercises.png">
+                    </div>
+
+                    <div class="video-placeholder" data-video="videos/usi-walk.mp4">
+                        <img src="images/video-usi.png">
+                    </div>
                 </div>
             </div>
 
             <div class="video-container">
                 <h3>2. Pada Bhedas</h3>
                 <div class="video-grid">
-                    <div class="video-placeholder">Video 2</div>
-                    <div class="video-placeholder">Video 3</div>
-                    <div class="video-placeholder">Video 4</div>
+                    <div class="video-placeholder">
+                        <img src="images/videos-jaathis.png">
+                    </div>
+                    <div class="video-placeholder">
+                        <img src="images/video-taandavas.png">
+                    </div>
                 </div>
             </div>
 
             <div class="video-container">
                 <h3>3. Adavus</h3>
-                <div class="video-grid">
-                    <div class="video-placeholder">Video 5</div>
-                    <div class="video-placeholder">Video 6</div>
-                    <div class="video-placeholder">Video 7</div>
+                <div class="video-placeholder">
+                    <img src="images/video-taandavas.png">
                 </div>
             </div>
         </section>
+
+        <!-- Modal for Video Player -->
+        <div id="videoModal" class="video-modal">
+            <div class="modal-content">
+                <span class="close-btn">&times;</span>
+                <video id="modalVideo" controls>
+                    <source src="" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        </div>
+
     </main>
+
+    <script src="videos.js"></script>
 
 </body>
 </html>
