@@ -233,7 +233,7 @@ body {
 /* Header */
 header {
     background-color: #c7927a;
-    color: white;
+    color: #F4EBCF;
     padding: 20px;
     display: flex;
     justify-content: space-between;
@@ -245,7 +245,7 @@ header {
 }
 
 nav a {
-    color: white;
+    color: #F4EBCF;
     text-decoration: none;
     margin-right: 15px;
     font-size: 16px;
@@ -448,7 +448,7 @@ nav a {
 }
 
 .story-text p {
-    font-size: 18px;
+    font-size: 20px;
     line-height: 1.6;
     color: #4e5c3b;
     margin-bottom: 40px;
@@ -552,7 +552,7 @@ nav a {
 .next-link, .previous-link {
     text-decoration: none;
     font-size: 18px;
-    color: white;
+    color: #F4EBCF;
     background-color: #c7927a;
     padding: 10px 20px;
     border-radius: 10px;
@@ -847,7 +847,7 @@ main {
     display: inline-block;
     padding: 15px 30px;
     background-color: #c7927a;
-    color: white;
+    color: #F4EBCF;
     text-decoration: none;
     border-radius: 10px;
     font-size: 18px;
@@ -888,7 +888,7 @@ main {
     margin: 40px auto;
     max-width: 800px;
     padding: 20px;
-    background-color: #fff;
+    background-color: #F4EBCF;
     border-radius: 10px;
     text-align: left;
 }
@@ -906,7 +906,7 @@ main {
 .community-btn {
     padding: 10px 20px;
     background-color: #c7927a;
-    color: white;
+    color: #F4EBCF ;
     border: none;
     border-radius: 5px;
     margin: 10px;
@@ -949,7 +949,7 @@ main {
 .submit-btn, .cancel-btn {
     padding: 10px 20px;
     background-color: #c7927a;
-    color: white;
+    color: #F4EBCF;
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -962,7 +962,7 @@ main {
 }
 
 .hidden {
-    background-color: #eee; /* Hide the text by matching the background */
+    background-color: #F4EBCF; /* Hide the text by matching the background */
     color: transparent; /* Hide the text */
     transition: background-color 0.3s, color 0.3s; /* Smooth reveal */
 }
@@ -999,7 +999,7 @@ main {
 .reply-btn {
     padding: 10px 15px;
     background-color: #c7927a;
-    color: white;
+    color: #F4EBCF;
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -1194,7 +1194,7 @@ canvas {
 .start-btn {
     padding: 15px 30px;
     background-color: #c7927a;
-    color: white;
+    color: #F4EBCF;
     border: none;
     border-radius: 10px;
     font-size: 18px;
@@ -1204,4 +1204,168 @@ canvas {
 
 .start-btn:hover {
     background-color: #b07664;
+}
+
+/* ######################################## QUIZ SECTION ########################################## */
+/* General Quiz Layout */
+.quiz-section {
+    max-width: 1024px;
+    margin: 0 auto;
+    margin-top: 20px;
+    text-align: center;
+    padding: 40px;
+    background-color: #f9f4e3;
+    border-radius: 10px;
+    border: 2px solid #F2D6A1;
+}
+
+.quiz-header {
+    margin-bottom: 20px;
+}
+
+#question-text {
+    font-size: 22px;
+    background-color: #822927;
+    color: #F4EBCF;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    margin-top: 40px;
+}
+
+#question-number {
+    font-size: 14px;
+    color: #6e6e6e;
+    text-align: right;
+}
+
+.answer-options {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.answer-options button {
+    padding: 15px 20px;
+    font-size: 16px;
+    background-color: #F2D6A1;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-family: Arial, sans-serif;
+    color: #7D000F;
+}
+
+.answer-options button:hover {
+    background-color: #F2D6A1;
+}
+
+.selected-answer {
+    background-color: #eda638 !important; /* Selected answer */
+}
+
+.correct-answer {
+    background-color: transparent !important; /* Correct answer */
+}
+
+.incorrect-answer {
+    background-color: transparent !important; /* Incorrect answer */
+}
+
+.quiz-navigation {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.quiz-button {
+    background-color: #7D000F;
+    color: #7D000F;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.quiz-button:hover {
+    background-color: #b33c3b;
+}
+
+.quiz-hidden {
+    display: none;
+}
+/* Quiz Results */
+#quiz-results h2 {
+    font-size: 28px;
+    color: #822927;
+    margin-bottom: 20px;
+    margin-top: 40px;
+}
+
+#score-percentage {
+    font-size: 24px;
+    color: #5F610A;
+    margin-bottom: 10px;
+}
+
+#score-details {
+    font-size: 18px;
+    font-weight: bold;
+    color: #822927;
+    margin-bottom: 20px;
+}
+
+.review-questions {
+    margin-top: 30px;
+    text-align: left;
+}
+
+.review-question {
+    margin-bottom: 20px;
+}
+
+.review-question p {
+    margin: 5px 0;
+    font-size: 16px;
+    color: #3d3d3d;
+}
+
+.review-question .correct-answer,
+.review-question .incorrect-answer {
+    font-weight: bold;
+    border-radius: 5px;
+    padding: 0;
+    display: inline;
+    background-color: transparent;
+}
+
+.review-question .correct-answer {
+    color: #5F610A;
+    background-color: transparent;
+    
+}
+
+.review-question .incorrect-answer {
+    color:  #7D000F ;
+    background-color: transparent;
+    border:2px
+    
+}
+
+.quiz-button {
+    background-color: #822927; 
+    color: #F4EBCF;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+    display: inline-block;
+}
+
+.quiz-button:hover {
+    background-color: #b33c3b;
 }

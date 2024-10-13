@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unit 1 - Quick Quiz</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <a href="index.html">
+                <img src="images/Taandav_Logo.png" alt="Taandav Logo" style="height: 60px;">
+            </a>
+        </div>
+        <nav>
+            <a href="theory.html">Theory</a>
+            <a href="videos.html">Practical Videos</a>
+            <a href="posenet.html">Posenet</a>
+            <a href="community.html">Community</a>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Quiz Section -->
+        <section class="quiz-section">
+            <h2>Unit 1 – Origin of Natya</h2>
+            <p>Time for a quick quiz!</p>
+            <div class="quiz-container" id="quiz-container">
+                <div class="quiz-header">
+                    <p id="question-text"></p>
+                    <p id="question-number"></p>
+                </div>
+
+                <div class="answer-options" id="answer-options">
+                    <!-- Options will be dynamically loaded -->
+                </div>
+
+                <div class="quiz-navigation">
+                    <button id="back-button" class="quiz-button">Back</button>
+                    <button id="next-button" class="quiz-button">Next</button>
+                </div>
+            </div>
+
+            <!-- Quiz Results Section (Initially Hidden) -->
+            <div id="quiz-results" class="quiz-hidden">
+                <h2>Quiz Results</h2>
+                <p id="score-percentage"></p>
+                <p id="score-details"></p>
+
+                <div class="review-questions" id="review-questions">
+                    <!-- Questions with correct/incorrect answers will be displayed here -->
+                </div>
+
+                <a href="unit1-objectives.html" class="quiz-button">Done</a>
+            </div>
+        </section>
+    </main>
+
+    <script src="quiz-script.js"></script>
+</body>
+</html>
