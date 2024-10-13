@@ -1125,7 +1125,7 @@ main {
 
 /* Posenet Page */
 .posenet-section {
-    max-width: 900px;
+    max-width: 880px;
     margin: 40px auto;
     padding: 20px;
     background-color: #fdf3e2;
@@ -1134,9 +1134,16 @@ main {
 }
 
 .posenet-section h2 {
-    font-size: 36px;
+    font-size: 24px;
     color: #571c20;
     margin-bottom: 20px;
+    margin-top: 40px;
+}
+
+.posenet-section h3 {
+    font-size: 24px;
+    color: #571c20;
+    margin-top: 40px;
 }
 
 .posenet-section ol {
@@ -1144,6 +1151,7 @@ main {
     font-size: 18px;
     color: #3d3d3d;
     padding-left: 20px;
+    margin-top: 20px;
 }
 
 .status-indicators {

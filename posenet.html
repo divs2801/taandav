@@ -33,7 +33,17 @@
             <h2>Practice your Aramandi with Posenet! </h2>
             <p>PoseNet uses your camera to check your body posture. It helps you practice Aramandi 
                 correctly by showing if your knees and back are in the right position.
-                This helps you improve your posture and technique, even when you’re practicing on your own.</p>
+                This helps you improve your posture and technique, even when you’re practicing on your own.
+            </p>
+    
+            <!-- Container for the video/canvas feed -->
+            <div id="video-feed-container"> </div>
+                <!-- The canvas for the live video feed will be inserted here by P5.js --> 
+               <!-- Posture Status Indicators -->
+            <div class="status-indicators">
+                <span id="wrongPosture" class="status wrong-posture">✘ Wrong Posture</span>
+                <span id="correctPosture" class="status correct-posture">✔ Correct Posture</span>
+            </div>    
                 
             <h3>Instructions </h3>
             <ol>
@@ -43,15 +53,7 @@
                 <li>Practice your aramandi, and the system will provide feedback on your posture. A green signal means correct posture, and a red signal means incorrect posture.</li>
             </ol>
 
-            <!-- Posture Status Indicators -->
-            <div class="status-indicators">
-                <span id="wrongPosture" class="status wrong-posture">✘ Wrong Posture</span>
-                <span id="correctPosture" class="status correct-posture">✔ Correct Posture</span>
-            </div>
-
-            <!-- Container for the video/canvas feed -->
-            <div id="video-feed-container"> </div>
-                <!-- The canvas for the live video feed will be inserted here by P5.js -->
+            
         
         </section>
 
